@@ -2,14 +2,27 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - Thomas Avronsart</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Thomas Avronsart</h1>
+    <h1 id="typingText">Thomas Avronsart</h1>
     <p>Développeur Web en alternance</p>
+
+    <button 
+      id="darkModeToggle" 
+      aria-label="Basculer mode sombre" 
+      aria-pressed="false"
+      title="Basculer mode sombre"
+    >🌙</button>
+
     <nav>
       <ul>
         <li><a href="#apropos">À propos</a></li>
@@ -20,38 +33,53 @@
   </header>
 
   <main>
-    <section id="apropos">
+    <section id="apropos" tabindex="-1">
       <h2>À propos</h2>
       <p>
         Je suis un développeur web junior passionné, à la recherche d'une alternance pour approfondir mes compétences en HTML, CSS, JavaScript et développement full-stack. J’aime résoudre des problèmes et apprendre en construisant.
       </p>
     </section>
 
-    <section id="projets">
+    <section id="projets" tabindex="-1">
       <h2>Projets</h2>
 
-      <div class="projet">
+      <article class="projet" tabindex="0">
         <h3>Portfolio personnel</h3>
         <p>Site responsive avec HTML, CSS, et JavaScript. Il présente mes projets et mes liens professionnels.</p>
-        <a href="https://github.com/ThomasAvronsart" target="_blank">Voir le code</a>
-      </div>
+        <a href="https://github.com/ThomasAvronsart" target="_blank" rel="noopener noreferrer">Voir le code</a>
+      </article>
 
-      <div class="projet">
+      <article class="projet" tabindex="0">
         <h3>Site vitrine de restaurant</h3>
         <p>Design responsive avec menu interactif en JavaScript. Réalisé avec HTML, CSS et JS vanilla.</p>
-        <a href="https://github.com/tonpseudo/restaurant-site" target="_blank">Voir le code</a>
-      </div>
+        <a href="https://github.com/tonpseudo/restaurant-site" target="_blank" rel="noopener noreferrer">Voir le code</a>
+      </article>
     </section>
 
-    <section id="contact">
+    <section id="contact" tabindex="-1">
       <h2>Contact</h2>
+
       <p>Email : <a href="mailto:thomas.16075@gmail.com">thomas.16075@gmail.com</a></p>
-      <p>LinkedIn : <a href="https://www.linkedin.com/in/thomas-avronsart-299405357/" target="_blank">linkedin.com/in/thomas-avronsart</a></p>
-      <p>GitHub : <a href="https://github.com/ThomasAvronsart" target="_blank">github.com/ThomasAvronsart</a></p>
+      <p>LinkedIn : <a href="https://www.linkedin.com/in/thomas-avronsart-299405357/" target="_blank" rel="noopener noreferrer">linkedin.com/in/thomas-avronsart</a></p>
+      <p>GitHub : <a href="https://github.com/ThomasAvronsart" target="_blank" rel="noopener noreferrer">github.com/ThomasAvronsart</a></p>
+
+      <form id="contactForm" novalidate aria-describedby="formMessage" aria-live="polite">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required minlength="2" />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required minlength="10"></textarea>
+
+        <button type="submit">Envoyer</button>
+        <p id="formMessage" role="alert" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
-  <button id="backToTop">↑</button>
+  <button id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
 
   <footer>
     <p>&copy; 2025 Thomas Avronsart - Portfolio Développeur Web</p>
@@ -60,6 +88,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-

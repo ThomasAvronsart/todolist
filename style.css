@@ -1,69 +1,107 @@
-/* ===== BASE ===== */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #333;
-  scroll-behavior: smooth;
-  line-height: 1.6;
+/* =======================
+   VARIABLES CSS GLOBALES
+========================= */
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --color-primary: #00aced;
+  --color-primary-dark: #007bb5;
+  --color-bg: #f5f5f5;
+  --color-text: #333;
+  --color-header-bg: #222;
+  --color-header-text: #fff;
+  --color-link-hover: #007acc;
+  --color-shadow: rgba(0, 0, 0, 0.1);
 }
 
-main {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
+/* =======================
+   RESET & BASE
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem);
 }
 
 a {
-  color: #007acc;
+  color: var(--color-primary);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-a:hover {
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
   text-decoration: underline;
 }
 
-/* ===== HEADER ===== */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* =======================
+   HEADER
+========================= */
 header {
-  background: #222;
-  color: white;
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
   text-align: center;
   padding: 40px 20px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 header p {
   font-size: 1.2rem;
   color: #ccc;
+  margin-top: 0.5em;
 }
 
-/* ===== NAVIGATION ===== */
+/* =======================
+   NAVIGATION
+========================= */
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin: 20px 0 0 0;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #00aced;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-weight: 700;
 }
 
-nav a:hover {
-  color: #fff;
+nav a.active,
+nav a:focus-visible {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 2px;
 }
 
-/* ===== SECTIONS ===== */
+/* =======================
+   MAIN CONTENT
+========================= */
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
 section {
   margin-bottom: 60px;
   opacity: 0;
@@ -77,47 +115,102 @@ section.visible {
 }
 
 section h2 {
-  font-size: 2rem;
-  border-left: 4px solid #00aced;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  border-left: 4px solid var(--color-primary);
   padding-left: 10px;
   margin-bottom: 20px;
 }
 
-/* ===== PROJETS ===== */
+/* =======================
+   PROJETS
+========================= */
 .projet {
-  background: white;
+  background-color: white;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px var(--color-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projet:hover {
-  transform: translateY(-5px);
+.projet:hover,
+.projet:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 172, 236, 0.3);
 }
 
 .projet a {
   display: inline-block;
   margin-top: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* ===== CONTACT ===== */
+.projet a:hover,
+.projet a:focus {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* =======================
+   CONTACT
+========================= */
 #contact a {
   display: inline-block;
   margin: 5px 0;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  background: #222;
-  color: white;
-  padding: 20px;
+/* =======================
+   FORMULAIRES
+========================= */
+form label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
 }
 
-/* ===== BOUTON RETOUR EN HAUT ===== */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: var(--color-primary-dark);
+}
+
+/* =======================
+   BOUTON RETOUR EN HAUT
+========================= */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -129,15 +222,18 @@ footer {
   font-size: 20px;
   border: none;
   border-radius: 50%;
-  background-color: #00aced;
+  background-color: var(--color-primary);
   color: white;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.4s ease, background-color 0.3s;
+  transition: opacity 0.4s ease, background-color 0.3s ease;
+  z-index: 1000;
 }
 
-#backToTop:hover {
-  background-color: #007bb5;
+#backToTop:hover,
+#backToTop:focus {
+  background-color: var(--color-primary-dark);
+  outline: none;
 }
 
 #backToTop.visible {
@@ -145,7 +241,19 @@ footer {
   pointer-events: auto;
 }
 
-/* ===== RESPONSIVE ===== */
+/* =======================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 20px;
+}
+
+/* =======================
+   RESPONSIVE
+========================= */
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -163,4 +271,93 @@ footer {
   .projet {
     padding: 15px;
   }
+}
+
+@media (max-width: 400px) {
+  main {
+    padding: 20px 10px;
+  }
+
+  #backToTop {
+    bottom: 15px;
+    right: 15px;
+    font-size: 18px;
+  }
+}
+
+/* =======================
+   MODE SOMBRE
+========================= */
+body.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #181818;
+  color: #eee;
+}
+
+body.dark-mode a {
+  color: #4da6ff;
+}
+
+body.dark-mode a:hover,
+body.dark-mode a:focus {
+  color: #99ccff;
+}
+
+body.dark-mode nav a {
+  color: #4daaff;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a:focus {
+  color: #99ccff;
+}
+
+body.dark-mode .projet {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 10px rgba(77, 170, 255, 0.3);
+}
+
+body.dark-mode .projet:hover,
+body.dark-mode .projet:focus-within {
+  box-shadow: 0 8px 20px rgba(77, 170, 255, 0.6);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode textarea {
+  background-color: #222;
+  border-color: #555;
+  color: #ddd;
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="email"]:focus,
+body.dark-mode textarea:focus {
+  border-color: #4da6ff;
+}
+
+body.dark-mode button[type="submit"] {
+  background-color: #4da6ff;
+  color: #222;
+}
+
+body.dark-mode button[type="submit"]:hover,
+body.dark-mode button[type="submit"]:focus {
+  background-color: #3399ff;
+}
+
+body.dark-mode #backToTop {
+  background-color: #4da6ff;
+  color: #222;
+}
+
+body.dark-mode #backToTop:hover,
+body.dark-mode #backToTop:focus {
+  background-color: #3399ff;
+  color: #fff;
 }
