@@ -1,17 +1,166 @@
+/* ===== BASE ===== */
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* ===== NAVIGATION ===== */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #00aced;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-size: 2rem;
+  border-left: 4px solid #00aced;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===== PROJETS ===== */
+.projet {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.projet:hover {
+  transform: translateY(-5px);
+}
+
+.projet a {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ===== CONTACT ===== */
+#contact a {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 20px;
+}
+
+/* ===== BOUTON RETOUR EN HAUT ===== */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: #00aced;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s ease, background-color 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #007bb5;
+}
+
+#backToTop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  header {
-    background: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+
+  header h1 {
+    font-size: 2rem;
   }
-  
-  main {
-    padding: 20px;
+
+  section h2 {
+    font-size: 1.6rem;
   }
-  
+
+  .projet {
+    padding: 15px;
+  }
+}
