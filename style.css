@@ -1,4 +1,4 @@
-/* ========== BASE GLOBALE ========== */
+/* BASE GLOBALE */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
@@ -22,7 +22,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* ========== FORMULAIRE ========== */
+/* FORMULAIRE */
 form {
   margin-bottom: 20px;
 }
@@ -56,7 +56,7 @@ button:focus {
   outline: 2px solid #007bb5;
 }
 
-/* ========== MESSAGE ========== */
+/* MESSAGE */
 .form-message {
   margin-bottom: 15px;
   min-height: 1em;
@@ -64,7 +64,7 @@ button:focus {
   color: green;
 }
 
-/* ========== LISTE DE TÂCHES ========== */
+/* LISTE DE TÂCHES */
 ul {
   list-style-type: none;
   padding: 0;
@@ -111,7 +111,7 @@ li button:hover {
   color: red;
 }
 
-/* ========== FILTRES ========== */
+/* FILTRES */
 .filters {
   display: flex;
   justify-content: center;
@@ -137,7 +137,7 @@ li button:hover {
   color: white;
 }
 
-/* ========== ANIMATION ========== */
+/* ANIMATION */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -149,7 +149,7 @@ li button:hover {
   }
 }
 
-/* ========== RESPONSIVE ========== */
+/* RESPONSIVE */
 @media (max-width: 480px) {
   input[type="text"] {
     width: 100%;
@@ -165,7 +165,7 @@ li button:hover {
   }
 }
 
-/* ========== MODE SOMBRE ========== */
+/* MODE SOMBRE */
 body.dark-mode {
   background-color: #121212;
   color: #eee;
@@ -197,4 +197,3 @@ body.dark-mode .filters button.active {
   background-color: #00aced;
   color: black;
 }
-
