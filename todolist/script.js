@@ -7,7 +7,6 @@ const darkModeToggle = document.getElementById("darkModeToggle");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 tasks.forEach(addTaskToDOM);
 
-// Rétablir le mode sombre si activé précédemment
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark-mode");
   darkModeToggle.textContent = "☀️";
