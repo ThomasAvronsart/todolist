@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo List Améliorée</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>📝 Ma ToDo List</h1>
+    <button id="darkModeToggle" aria-label="Basculer mode sombre" title="Basculer mode sombre">🌙</button>
+  </header>
+
+  <main>
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Nouvelle tâche..." required />
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <div id="formMessage" class="form-message" aria-live="polite"></div>
+
+    <div class="filters">
+      <button onclick="filterTasks('all')">Toutes</button>
+      <button onclick="filterTasks('todo')">À faire</button>
+      <button onclick="filterTasks('done')">Terminées</button>
+      <button onclick="clearAllTasks()">Tout effacer</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </main>
+
+  <footer>
+    <p>© 2025 - Projet ToDo List par Thomas Avronsart</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
