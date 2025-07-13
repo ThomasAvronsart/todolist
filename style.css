@@ -1,201 +1,200 @@
 /* ========== BASE GLOBALE ========== */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 40px 20px;
-    text-align: center;
-    color: #333;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* ========== FORMULAIRE ========== */
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #00aced;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bb5;
+}
+
+button:focus {
+  outline: 2px solid #007bb5;
+}
+
+/* ========== MESSAGE ========== */
+.form-message {
+  margin-bottom: 15px;
+  min-height: 1em;
+  font-weight: bold;
+  color: green;
+}
+
+/* ========== LISTE DE TÂCHES ========== */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+li {
+  background-color: #fff;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+li.completed {
+  background-color: #e0e0e0;
+  color: #999;
+  text-decoration: line-through;
+  transform: scale(0.98);
+}
+
+li small {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+li button {
+  background: none;
+  border: none;
+  color: #cc0000;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+li button:hover {
+  color: red;
+}
+
+/* ========== FILTRES ========== */
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #333;
+  font-weight: 600;
+}
+
+.filters button:hover {
+  background-color: #ccc;
+}
+
+.filters button.active {
+  background-color: #007bb5;
+  color: white;
+}
+
+/* ========== ANIMATION ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  #darkModeToggle {
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-  
-  /* ========== FORMULAIRE ========== */
-  form {
-    margin-bottom: 20px;
-  }
-  
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 480px) {
   input[type="text"] {
-    padding: 10px;
-    width: 250px;
-    max-width: 90%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    width: 100%;
   }
-  
-  button {
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: #00aced;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #007bb5;
-  }
-  
-  button:focus {
-    outline: 2px solid #007bb5;
-  }
-  
-  /* ========== MESSAGE ========== */
-  .form-message {
-    margin-bottom: 15px;
-    min-height: 1em;
-    font-weight: bold;
-    color: green;
-  }
-  
-  /* ========== LISTE DE TÂCHES ========== */
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 500px;
-  }
-  
+
   li {
-    background-color: #fff;
-    margin: 10px auto;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeIn 0.3s ease;
-    transition: all 0.3s ease;
+    width: 90%;
   }
-  
-  li.completed {
-    background-color: #e0e0e0;
-    color: #999;
-    text-decoration: line-through;
-    transform: scale(0.98);
-  }
-  
-  li small {
-    margin-top: 6px;
-    font-size: 0.75rem;
-    color: #666;
-  }
-  
-  li button {
-    background: none;
-    border: none;
-    color: #cc0000;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 8px;
-  }
-  
-  li button:hover {
-    color: red;
-  }
-  
-  /* ========== FILTRES ========== */
+
   .filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 8px;
   }
-  
-  .filters button {
-    padding: 8px 12px;
-    border-radius: 5px;
-    background-color: #ddd;
-    color: #333;
-    font-weight: 600;
-  }
-  
-  .filters button:hover {
-    background-color: #ccc;
-  }
-  
-  .filters button.active {
-    background-color: #007bb5;
-    color: white;
-  }
-  
-  /* ========== ANIMATION ========== */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* ========== RESPONSIVE ========== */
-  @media (max-width: 480px) {
-    input[type="text"] {
-      width: 100%;
-    }
-  
-    li {
-      width: 90%;
-    }
-  
-    .filters {
-      flex-direction: column;
-      gap: 8px;
-    }
-  }
-  
-  /* ========== MODE SOMBRE ========== */
-  body.dark-mode {
-    background-color: #121212;
-    color: #eee;
-  }
-  
-  body.dark-mode input,
-  body.dark-mode button {
-    background-color: #333;
-    color: white;
-    border: 1px solid #555;
-  }
-  
-  body.dark-mode li {
-    background-color: #1e1e1e;
-    color: #ccc;
-  }
-  
-  body.dark-mode li.completed {
-    background-color: #333;
-    color: #777;
-  }
-  
-  body.dark-mode .filters button {
-    background-color: #444;
-    color: white;
-  }
-  
-  body.dark-mode .filters button.active {
-    background-color: #00aced;
-    color: black;
-  }
-  
-  
+}
+
+/* ========== MODE SOMBRE ========== */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-mode li {
+  background-color: #1e1e1e;
+  color: #ccc;
+}
+
+body.dark-mode li.completed {
+  background-color: #333;
+  color: #777;
+}
+
+body.dark-mode .filters button {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-mode .filters button.active {
+  background-color: #00aced;
+  color: black;
+}
+
